@@ -1,12 +1,13 @@
-/**
- * @format
- */
-
 import {Navigation} from 'react-native-navigation';
 import Login from './src/screens/Login';
 import NewFeed from './src/screens/NewFeed';
 import Chat from './src/screens/Chat';
 import Group from './src/screens/Group';
+import * as Sentry from '@sentry/react-native';
+
+Sentry.init({
+  dsn: 'https://3976f395eb904555b9aae5655df7b337@sentry.io/1816465',
+});
 
 Navigation.registerComponent('navigation.playground.Login', () => Login);
 Navigation.registerComponent('navigation.playground.NewFeed', () => NewFeed);
