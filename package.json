@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@sentry/react-native": "^1.0.9",
+    "appcenter": "2.5.0",
+    "appcenter-analytics": "2.5.0",
+    "appcenter-crashes": "2.5.0",
     "react": "16.9.0",
     "react-native": "0.61.4",
     "react-native-navigation": "^3.5.1"
