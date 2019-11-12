@@ -28,7 +28,11 @@ export default class Chat extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Chat Screen</Text>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => {
+            throw new Error('My first Sentry error!');
+          }}>
           <Text>Go to About</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btn}>
