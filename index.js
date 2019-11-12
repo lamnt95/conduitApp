@@ -13,18 +13,25 @@ Navigation.registerComponent('navigation.playground.NewFeed', () => NewFeed);
 Navigation.registerComponent('navigation.playground.Chat', () => Chat);
 Navigation.registerComponent('navigation.playground.Group', () => Group);
 
+const stack = {
+  children: [
+    {
+      component: {
+        name: 'navigation.playground.Login',
+        options: {
+          topBar: {
+            visible: false,
+          },
+        },
+      },
+    },
+  ],
+};
+
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {
-      stack: {
-        children: [
-          {
-            component: {
-              name: 'navigation.playground.Login',
-            },
-          },
-        ],
-      },
+      stack,
     },
   });
 });
