@@ -3,6 +3,11 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   btn: {
     width: 200,
     padding: 10,
@@ -12,7 +17,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class Profile extends React.Component {
+export default class Chat extends React.Component {
   constructor(props) {
     super(props);
     Navigation.events().bindComponent(this);
@@ -21,8 +26,8 @@ export default class Profile extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text>Profile</Text>
+      <View style={styles.container}>
+        <Text>Chat Screen</Text>
         <TouchableOpacity style={styles.btn}>
           <Text>Go to About</Text>
         </TouchableOpacity>

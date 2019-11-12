@@ -3,13 +3,15 @@
  */
 
 import {Navigation} from 'react-native-navigation';
-import Home from './src/screens/Home';
-import About from './src/screens/About';
-import Profile from './src/screens/Profile';
+import Login from './src/screens/Login';
+import NewFeed from './src/screens/NewFeed';
+import Chat from './src/screens/Chat';
+import Group from './src/screens/Group';
 
-Navigation.registerComponent('navigation.playground.Home', () => Home);
-Navigation.registerComponent('navigation.playground.About', () => About);
-Navigation.registerComponent('navigation.playground.Profile', () => Profile);
+Navigation.registerComponent('navigation.playground.Login', () => Login);
+Navigation.registerComponent('navigation.playground.NewFeed', () => NewFeed);
+Navigation.registerComponent('navigation.playground.Chat', () => Chat);
+Navigation.registerComponent('navigation.playground.Group', () => Group);
 
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
@@ -18,7 +20,7 @@ Navigation.events().registerAppLaunchedListener(() => {
         children: [
           {
             component: {
-              name: 'navigation.playground.Home',
+              name: 'navigation.playground.Login',
             },
           },
         ],
