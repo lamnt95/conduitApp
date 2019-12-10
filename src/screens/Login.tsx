@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 });
 
 export default class Login extends React.Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     Navigation.events().bindComponent(this);
     this.state = {};
@@ -35,6 +35,7 @@ export default class Login extends React.Component {
     console.log(this.props);
     return (
       <View style={styles.container}>
+        <Text>Hello</Text>
         <Text style={styles.screenName}>Login Screens</Text>
         <TouchableOpacity style={styles.btn} onPress={this.onClickToSignIn}>
           <Text>Sign in</Text>
