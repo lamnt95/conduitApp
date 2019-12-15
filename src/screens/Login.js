@@ -1,6 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import blogAppRedux from 'blogAppRedux';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +20,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class Login extends React.Component {
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(blogAppRedux.reducers.authActions, dispatch),
+});
+
+class Login extends React.Component {
   constructor(props) {
     super(props);
     Navigation.events().bindComponent(this);
@@ -26,6 +37,8 @@ export default class Login extends React.Component {
   }
 
   onClickToSignIn() {
+    const {actions} = this.props;
+    actions.initAuthStart();
     Navigation.push(this.props.componentId, {
       component: {name: 'navigation.playground.NewFeed'},
     });
@@ -43,3 +56,5 @@ export default class Login extends React.Component {
     );
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
